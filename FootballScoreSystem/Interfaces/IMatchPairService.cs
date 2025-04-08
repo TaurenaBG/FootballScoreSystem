@@ -9,6 +9,7 @@ namespace FootballScoreSystem.Interfaces
         Task<MatchPair> GetMatchByIdAsync(int id);  
         Task<IEnumerable<MatchPair>> GetAllMatchesAsync();  
         Task UpdateMatchAsync(MatchPair matchPair); 
-        Task DeleteMatchAsync(int id); 
+        Task DeleteMatchAsync(int id);
+        Task<IEnumerable<MatchPair>> GetAllMatchPairsAsync();
     }
 }

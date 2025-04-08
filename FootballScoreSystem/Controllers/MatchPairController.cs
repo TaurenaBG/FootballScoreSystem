@@ -73,5 +73,15 @@ public class MatchPairController : ControllerBase
         await _matchPairService.DeleteMatchAsync(id);
         return NoContent();
     }
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<MatchPair>>> GetAllMatchPairs()
+    {
+        var matchPairs = await _matchPairService.GetAllMatchPairsAsync();
+        if (matchPairs == null || !matchPairs.Any())
+        {
+            return NotFound("No match pairs found.");
+        }
+        return Ok(matchPairs);
+    }
 }
 

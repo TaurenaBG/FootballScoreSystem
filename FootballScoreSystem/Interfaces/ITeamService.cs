@@ -10,5 +10,6 @@ namespace FootballScoreSystem.Interfaces
         Task UpdateTeamAsync(Team team);
         Task DeleteTeamAsync(int teamId);
         Task<IEnumerable<Team>> GetRankingsAsync();
+       
     }
 }

@@ -15,6 +15,7 @@ namespace FootballScoreSystem.Repository
             _context = context;
         }
 
+
         public async Task AddMatchPairAsync(MatchPair matchPair)
         {
             await _context.MatchPairs.AddAsync(matchPair);
@@ -68,6 +69,7 @@ namespace FootballScoreSystem.Repository
                 await _context.SaveChangesAsync();
             }
         }
+       
     }
 
 }

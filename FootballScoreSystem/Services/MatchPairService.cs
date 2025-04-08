@@ -14,6 +14,10 @@ namespace FootballScoreSystem.Services
             _matchPairRepository = matchPairRepository;
             _teamRepository = teamRepository;
         }
+        public async Task<IEnumerable<MatchPair>> GetAllMatchPairsAsync()
+        {
+            return await _matchPairRepository.GetAllMatchPairsAsync();
+        }
 
         public async Task<MatchPairResponse> CreateMatchAsync(MatchPair matchPair)
         {

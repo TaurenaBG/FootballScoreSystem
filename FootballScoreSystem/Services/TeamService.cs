@@ -7,10 +7,12 @@ namespace FootballScoreSystem.Services
     public class TeamService : ITeamService
     {
         private readonly ITeamRepository _teamRepository;
+        private readonly IMatchPairService _matchPairService;
 
-        public TeamService(ITeamRepository teamRepository)
+        public TeamService(ITeamRepository teamRepository, IMatchPairService matchPairService)
         {
             _teamRepository = teamRepository;
+            _matchPairService = matchPairService;
         }
 
         public async Task<IEnumerable<Team>> GetAllTeamsAsync()
@@ -51,5 +53,6 @@ namespace FootballScoreSystem.Services
 
             return sortedTeams;
         }
+       
     }
 }
